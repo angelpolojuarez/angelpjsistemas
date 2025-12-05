@@ -1,0 +1,50 @@
+/* style.css */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0e4b91;
+    color: white;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-img img {
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    margin-right: 10px;
+    text-decoration: none;
+    background: white;
+    color: #0e4b91;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #cce0ff;
+}
