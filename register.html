@@ -4,69 +4,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* FONDO PROFESIONAL DE DESARROLLO DE SISTEMAS */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+
+            background: 
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url("https://images.unsplash.com/photo-1537432376769-00a1e7c7d00e?auto=format&fit=crop&w=1400&q=80");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        /* ANIMACIÓN DE APARICIÓN */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* FORMULARIO ESTILO GLASS */
+        .form-box {
+            width: 400px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            color: white;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-40px); opacity: 0; }
+            to   { transform: translateY(0);     opacity: 1; }
+        }
+
+        .form-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #00aaff;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0088cc;
+        }
+
+        .redirect {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .redirect a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-box">
-            <h2>Crear Cuenta</h2>
 
-            <form id="registerForm">
-                <div class="input-group">
-                    <label>Nombre completo</label>
-                    <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
-                </div>
+    <div class="form-box">
+        <h2>Crear Cuenta</h2>
 
-                <div class="input-group">
-                    <label>Correo electrónico</label>
-                    <input type="email" id="email" value="angeljeffersonpolojuarez@gmail.com" required>
-                </div>
+        <form id="registerForm">
+            <div class="input-group">
+                <label>Nombre completo</label>
+                <input type="text" id="nombre" value="Angel Jefferson Polo Juarez" required>
+            </div>
 
-                <div class="input-group">
-                    <label>Contraseña</label>
-                    <input type="password" id="password" value="25demayo" required>
-                </div>
+            <div class="input-group">
+                <label>Correo electrónico</label>
+                <input type="email" id="email" value="angeljeffersonpolojuarez@gmail.com" required>
+            </div>
 
-                <div class="input-group">
-                    <label>Confirmar contraseña</label>
-                    <input type="password" id="confirmPassword" value="25demayo" required>
-                </div>
+            <div class="input-group">
+                <label>Contraseña</label>
+                <input type="password" id="password" value="25demayo" required>
+            </div>
 
-                <button type="submit" class="btn">Registrarse</button>
+            <div class="input-group">
+                <label>Confirmar contraseña</label>
+                <input type="password" id="confirmPassword" value="25demayo" required>
+            </div>
 
-                <p class="redirect">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
-            </form>
-        </div>
+            <button type="submit" class="btn">Registrarse</button>
+
+            <p class="redirect">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+        </form>
     </div>
 
     <script>
         // FUNCIONALIDAD DEL REGISTRO
         document.getElementById("registerForm").addEventListener("submit", function (e) {
-            e.preventDefault(); // evita recargar página
+            e.preventDefault();
 
             const nombre = document.getElementById("nombre").value;
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
             const confirmPassword = document.getElementById("confirmPassword").value;
 
-            // Validar contraseña
             if (password !== confirmPassword) {
                 alert("Las contraseñas no coinciden.");
                 return;
             }
 
-            // Guardar en localStorage (simulación de BD)
+            // Guardado simulado
             localStorage.setItem("userName", nombre);
             localStorage.setItem("userEmail", email);
             localStorage.setItem("userPassword", password);
 
             alert("Registro exitoso. Ahora puedes iniciar sesión.");
 
-            // Redirigir al login
             window.location.href = "login.html";
         });
     </script>
 
 </body>
 </html>
+
+
 
