@@ -3,146 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Usuario</title>
-
+    <title>Iniciar Sesión - Panel de Sistemas</title>
     <style>
+        /* --- ESTILOS GENERALES Y FONDO --- */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 40px;
-            color: white;
-            background: url("https://images.unsplash.com/photo-1581092334442-1a28376ff475?auto=format&fit=crop&w=1400&q=80");
+            display: flex; /* Usamos Flexbox para centrar */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1e1e1e; /* Fondo oscuro casi negro */
+            color: #f0f0f0; /* Texto claro */
+            /* Fondo con imagen de tecnología similar al ejemplo anterior */
+            background-image: url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80");
             background-size: cover;
             background-position: center;
+            /* Efecto de superposición oscura para que el formulario resalte */
+            position: relative;
         }
 
-        .corner-image {
-            width: 260px;
-            height: 260px;
-            object-fit: cover;
-            border-radius: 16px;
-            position: fixed;
-            top: 25px;
-            right: 25px;
-            border: 4px solid #00aaff;
-            box-shadow: 0 0 15px rgba(0,0,0,0.7);
-            z-index: 10;
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7); /* Superposición oscura */
+            backdrop-filter: blur(4px); /* Suave desenfoque del fondo */
+            z-index: 0;
         }
 
-        .content {
-            max-width: 900px;
-            background: rgba(0,0,0,0.55);
-            padding: 30px;
+        /* --- CONTENEDOR DEL FORMULARIO --- */
+        .login-container {
+            z-index: 1; /* Asegura que esté sobre el fondo */
+            width: 90%;
+            max-width: 400px;
+            padding: 40px;
+            background: rgba(33, 33, 33, 0.9); /* Contenedor más oscuro y semitransparente */
             border-radius: 15px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 0 20px rgba(0,0,0,0.7);
-            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            border-top: 3px solid #00aaff; /* Línea de color de acento */
         }
 
         h1 {
-            font-size: 36px;
+            text-align: center;
             color: #00aaff;
-            margin-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 28px;
+            letter-spacing: 1px;
         }
 
-        p {
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 15px;
+        /* --- ESTILOS DE LOS CAMPOS DE ENTRADA --- */
+        .input-group {
+            margin-bottom: 25px;
         }
 
-        .images-section {
-            margin-top: 30px;
-            background: rgba(0,0,0,0.4);
-            padding: 20px;
-            border-radius: 12px;
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #cccccc;
         }
 
-        .images-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .images-grid img {
+        .input-group input {
             width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid #00aaff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.6);
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Imagen grande en la esquina -->
-    <img class="corner-image" 
-         src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=90">
-
-    <div class="content">
-        <h1>Bienvenido, Angel Jefferson Polo Juarez</h1>
-
-        <p>
-            Me considero una persona comprometida, responsable y orientada al crecimiento continuo. 
-            Mis valores se basan en la honestidad, el respeto, la perseverancia y la actitud de mejora constante. 
-            Creo firmemente en que la integridad es fundamental para construir relaciones de confianza, 
-            tanto en el ámbito profesional como personal.
-        </p>
-
-        <p>
-            Entre mis aptitudes más destacadas se encuentra la capacidad de análisis, el pensamiento crítico 
-            y la resolución de problemas, cualidades esenciales en el ámbito del desarrollo de sistemas. 
-            Soy una persona organizada, adaptable y capaz de trabajar bajo presión sin perder la calidad 
-            ni la precisión en los resultados.
-        </p>
-
-        <p>
-            Asimismo, poseo habilidades para el trabajo en equipo y la comunicación efectiva, lo que me permite 
-            colaborar de manera eficiente en proyectos multidisciplinarios. Me caracterizo por mi curiosidad 
-            tecnológica, mi disposición para aprender nuevas herramientas y mi motivación por afrontar retos 
-            cada vez más complejos.
-        </p>
-
-        <p>
-            Mi compromiso, disciplina y constancia me impulsan a buscar siempre la excelencia. 
-            Estos valores y aptitudes reflejan mi disposición para asumir responsabilidades, 
-            adaptarme a entornos cambiantes y ofrecer soluciones innovadoras.
-        </p>
-    </div>
-
-    <!-- SECCIÓN DE IMÁGENES -->
-    <div class="images-section">
-        <h2 style="color:#00aaff; margin-bottom:15px;">Imágenes Profesionales de Sistemas</h2>
-
-        <div class="images-grid">
-
-            <!-- PROGRAMACIÓN -->
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80">
-
-            <!-- DESARROLLO DE SOFTWARE -->
-            <img src="https://images.unsplash.com/photo-1517430816045-df4b7de01f39?auto=format&fit=crop&w=1200&q=80">
-
-            <!-- ARQUITECTURA DE SOFTWARE / DIAGRAMAS -->
-            <img src="https://images.unsplash.com/photo-1537432376769-00a3d2cddc3d?auto=format&fit=crop&w=1200&q=80">
-
-            <!-- CIBERSEGURIDAD -->
-            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80">
-
-            <!-- INTELIGENCIA ARTIFICIAL -->
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80">
-
-            <!-- BASES DE DATOS -->
-            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80">
-
-            <!-- REDES Y SERVIDORES -->
-            <img src="https://images.unsplash.com/photo-1581093448799-9d7f4ac5c1c2?auto=format&fit=crop&w=1200&q=80">
-
-        </div>
-    </div>
-
-</body>
-</html>
+            padding: 12px 15px;
+            border: 1px solid #444444;
+            border-radius: 8px;
+            background-color: #2a2a2a; /* Fondo del
 
 
 
