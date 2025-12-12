@@ -14,7 +14,7 @@
             overflow: hidden;
         }
 
-        /* SLIDER DE FONDO */
+        /* FONDO SLIDER */
         .background-slider {
             position: fixed;
             top: 0; left: 0;
@@ -28,15 +28,13 @@
             object-fit: cover;
             position: absolute;
             opacity: 0;
-            animation: fadeSlider 18s infinite;
+            animation: slider 18s infinite;
         }
 
-        /* 3 imágenes = 18s (6s x imagen) */
-        @keyframes fadeSlider {
-            0% { opacity: 1; }
-            25% { opacity: 0; }
-            50% { opacity: 0; }
-            75% { opacity: 0; }
+        @keyframes slider {
+            0%   { opacity: 1; }
+            33%  { opacity: 0; }
+            66%  { opacity: 0; }
             100% { opacity: 1; }
         }
 
@@ -49,19 +47,17 @@
             width: 380px;
             margin: auto;
             margin-top: 120px;
-
             background: rgba(255, 255, 255, 0.15);
             padding: 30px;
             border-radius: 15px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
             color: white;
-
             animation: slideIn 1s ease-out;
         }
 
         @keyframes slideIn {
-            from { transform: translateY(-30px); opacity: 0; }
+            from { transform: translateY(-40px); opacity: 0; }
             to   { transform: translateY(0); opacity: 1; }
         }
 
@@ -84,7 +80,7 @@
         .btn {
             width: 100%;
             padding: 12px;
-            background: #00aaff;
+            background: #0095ff;
             border: none;
             color: white;
             border-radius: 8px;
@@ -93,7 +89,7 @@
             transition: 0.3s;
         }
 
-        .btn:hover { background: #0088cc; }
+        .btn:hover { background: #007acc; }
 
         .redirect {
             text-align: center;
@@ -105,15 +101,15 @@
             text-decoration: none;
         }
     </style>
-</head>
 
+</head>
 <body>
 
-    <!-- SLIDER DE FONDO CON TUS IMÁGENES -->
+    <!-- SLIDER FONDO PROFESIONAL -->
     <div class="background-slider">
-        <img src="img1.jpg">
-        <img src="img2.jpg">
-        <img src="img3.jpg">
+        <img src="https://images.unsplash.com/photo-1537432376769-00a1e7c7d00e?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1400&q=80">
     </div>
 
     <div class="form-box">
@@ -148,7 +144,7 @@
 
             if (email === savedEmail && password === savedPassword) {
                 alert("Inicio de sesión exitoso");
-                window.location.href = "dashboard.html";
+                window.location.href = "dashboard.html"; // <--- AQUÍ ENTRAS AL DASHBOARD
             } else {
                 alert("Correo o contraseña incorrectos");
             }
