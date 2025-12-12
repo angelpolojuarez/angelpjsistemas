@@ -16,17 +16,18 @@
             background-position: center;
         }
 
-        /* Imagen más mediana */
+        /* Imagen de la esquina (máximo tamaño recomendado) */
         .corner-image {
-            width: 140px;
-            height: 140px;
+            width: 260px;
+            height: 260px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 16px;
             position: fixed;
             top: 25px;
             right: 25px;
-            border: 3px solid #00aaff;
-            box-shadow: 0 0 12px rgba(0,0,0,0.6);
+            border: 4px solid #00aaff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.7);
+            z-index: 10;
         }
 
         .content {
@@ -53,9 +54,9 @@
 </head>
 <body>
 
-    <!-- Imagen profesional de tecnología (mediana) -->
+    <!-- Imagen profesional de tecnología (máxima resolución mostrable) -->
     <img class="corner-image" 
-         src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&q=80">
+         src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=90">
 
     <div class="content">
         <h1>Bienvenido, Angel Jefferson Polo Juarez</h1>
@@ -90,6 +91,7 @@
 
 </body>
 </html>
+
 
 
 
