@@ -6,43 +6,61 @@
     <title>Iniciar Sesión</title>
 
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            margin: 0;
-            font-family: Arial;
-
-            /* FONDO PROFESIONAL TIPO ISTOCK */
-            background: 
-                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                url("https://images.unsplash.com/photo-1537432376769-00a1e7c7d00e?auto=format&fit=crop&w=1400&q=80");
-            background-size: cover;
-            background-position: center;
-
+            font-family: Arial, sans-serif;
             height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            animation: fadeIn 1.2s ease-in-out;
+            overflow: hidden;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        /* CONTENEDOR DEL SLIDER DE FONDO */
+        .background-slider {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            animation: fadeBg 18s infinite;
         }
 
+        /* IMÁGENES DEL SLIDER */
+        .background-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            animation: slideImages 18s infinite;
+        }
+
+        /* ANIMACIÓN DEL SLIDER (3 IMÁGENES) */
+        @keyframes slideImages {
+            0%   { opacity: 1; }
+            33%  { opacity: 0; }
+            66%  { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .background-slider img:nth-child(1) { animation-delay: 0s; }
+        .background-slider img:nth-child(2) { animation-delay: 6s; }
+        .background-slider img:nth-child(3) { animation-delay: 12s; }
+
+        /* FORMULARIO GLASS */
         .form-box {
             width: 380px;
+            margin: auto;
+            margin-top: 120px;
             background: rgba(255, 255, 255, 0.15);
             padding: 30px;
             border-radius: 15px;
             backdrop-filter: blur(10px);
             box-shadow: 0 0 20px rgba(0,0,0,0.4);
             color: white;
-            animation: slideIn 0.9s ease-out;
+            animation: slideIn 1s ease-out;
         }
 
         @keyframes slideIn {
-            from { transform: translateY(-30px); opacity: 0; }
+            from { transform: translateY(-40px); opacity: 0; }
             to   { transform: translateY(0); opacity: 1; }
         }
 
@@ -53,14 +71,13 @@
 
         .input-group { margin-bottom: 15px; }
 
-        .input-group label { font-weight: bold; }
-
         .input-group input {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border-radius: 8px;
             border: none;
             outline: none;
+            font-size: 15px;
         }
 
         .btn {
@@ -72,6 +89,7 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
+            transition: 0.3s;
         }
 
         .btn:hover { background: #0088cc; }
@@ -86,9 +104,17 @@
             text-decoration: none;
         }
     </style>
-</head>
 
+</head>
 <body>
+
+    <!-- SLIDER DE FONDO CON VARIAS IMÁGENES PROFESIONALES -->
+    <div class="background-slider">
+        <img src="https://images.unsplash.com/photo-1537432376769-00a1e7c7d00e?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80">
+        <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1400&q=80">
+    </div>
+
 
     <div class="form-box">
         <h2>Iniciar Sesión</h2>
@@ -131,4 +157,6 @@
 
 </body>
 </html>
+
+
 
