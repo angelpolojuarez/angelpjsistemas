@@ -3,156 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
+    <title>Panel de Usuario</title>
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: Arial, sans-serif;
-            height: 100vh;
-            overflow: hidden;
+            margin: 0;
+            padding: 40px;
+            color: white;
+            background: url("https://ingenierosconectados.com/wp-content/uploads/2022/04/03_089_1-scaled.jpg");
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(2px);
         }
 
-        /* FONDO SLIDER */
-        .background-slider {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
-        }
-
-        .background-slider img {
-            width: 100%;
-            height: 100%;
+        /* Imagen en la esquina */
+        .corner-image {
+            width: 200px;
+            height: 200px;
             object-fit: cover;
-            position: absolute;
-            opacity: 0;
-            animation: slider 18s infinite;
+            border-radius: 12px;
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            border: 3px solid #00aaff;
+            box-shadow: 0 0 12px rgba(0,0,0,0.6);
         }
 
-        @keyframes slider {
-            0%   { opacity: 1; }
-            33%  { opacity: 0; }
-            66%  { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        .background-slider img:nth-child(1) { animation-delay: 0s; }
-        .background-slider img:nth-child(2) { animation-delay: 6s; }
-        .background-slider img:nth-child(3) { animation-delay: 12s; }
-
-        /* FORMULARIO */
-        .form-box {
-            width: 380px;
-            margin: auto;
-            margin-top: 120px;
-            background: rgba(255, 255, 255, 0.15);
+        /* Contenedor del texto */
+        .content {
+            max-width: 900px;
+            background: rgba(0,0,0,0.55);
             padding: 30px;
             border-radius: 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(0,0,0,0.4);
-            color: white;
-            animation: slideIn 1s ease-out;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 20px rgba(0,0,0,0.7);
         }
 
-        @keyframes slideIn {
-            from { transform: translateY(-40px); opacity: 0; }
-            to   { transform: translateY(0); opacity: 1; }
-        }
-
-        .form-box h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .input-group { margin-bottom: 15px; }
-
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: none;
-            outline: none;
-            font-size: 15px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 12px;
-            background: #0095ff;
-            border: none;
-            color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        .btn:hover { background: #007acc; }
-
-        .redirect {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .redirect a {
+        h1 {
+            font-size: 36px;
             color: #00aaff;
-            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 15px;
         }
     </style>
-
 </head>
 <body>
 
-    <!-- SLIDER FONDO PROFESIONAL -->
-    <div class="background-slider">
-        <img src="https://images.unsplash.com/photo-1537432376769-00a1e7c7d00e?auto=format&fit=crop&w=1400&q=80">
-        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80">
-        <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1400&q=80">
+    <!-- Imagen profesional en esquina -->
+    <img class="corner-image" 
+         src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=500&q=80">
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <h1>Bienvenido, Angel Jefferson Polo Juarez</h1>
+
+        <p>
+            Me considero una persona comprometida, responsable y orientada al crecimiento continuo. 
+            Mis valores se basan en la honestidad, el respeto, la perseverancia y la actitud de mejora constante. 
+            Creo firmemente en que la integridad es fundamental para construir relaciones de confianza, 
+            tanto en el ámbito profesional como personal.
+        </p>
+
+        <p>
+            Entre mis aptitudes más destacadas se encuentra la capacidad de análisis, el pensamiento crítico 
+            y la resolución de problemas, cualidades esenciales en el ámbito del desarrollo de sistemas. 
+            Soy una persona organizada, adaptable y capaz de trabajar bajo presión sin perder la calidad 
+            ni la precisión en los resultados.
+        </p>
+
+        <p>
+            Asimismo, poseo habilidades para el trabajo en equipo y la comunicación efectiva, lo que me permite 
+            colaborar de manera eficiente en proyectos multidisciplinarios. Me caracterizo por mi curiosidad 
+            tecnológica, mi disposición para aprender nuevas herramientas y mi motivación por afrontar retos 
+            cada vez más complejos.
+        </p>
+
+        <p>
+            Mi compromiso, disciplina y constancia me impulsan a buscar siempre la excelencia. 
+            Estos valores y aptitudes reflejan mi disposición para asumir responsabilidades, 
+            adaptarme a entornos cambiantes y ofrecer soluciones innovadoras que contribuyan al desarrollo 
+            y crecimiento de cualquier proyecto o institución con la que colabore.
+        </p>
     </div>
-
-    <div class="form-box">
-        <h2>Iniciar Sesión</h2>
-
-        <form id="loginForm">
-            <div class="input-group">
-                <label>Correo</label>
-                <input type="email" id="email" required>
-            </div>
-
-            <div class="input-group">
-                <label>Contraseña</label>
-                <input type="password" id="password" required>
-            </div>
-
-            <button type="submit" class="btn">Ingresar</button>
-
-            <p class="redirect">¿No tienes cuenta? <a href="register.html">Regístrate</a></p>
-        </form>
-    </div>
-
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-
-            const savedEmail = localStorage.getItem("userEmail");
-            const savedPassword = localStorage.getItem("userPassword");
-
-            if (email === savedEmail && password === savedPassword) {
-                alert("Inicio de sesión exitoso");
-                window.location.href = "dashboard.html"; // <--- AQUÍ ENTRAS AL DASHBOARD
-            } else {
-                alert("Correo o contraseña incorrectos");
-            }
-        });
-    </script>
 
 </body>
 </html>
+
+
 
 
 
